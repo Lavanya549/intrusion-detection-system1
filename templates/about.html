@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ML project</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="/static/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/static/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <h1 class="text-primary">Unauthorized Access Mitigation</h1>
+                <!-- <img src="/static/img/logo.png" alt="Logo"> -->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="{{url_for('index')}}" class="nav-item nav-link " style="color:#0d8383">HOME</a>
+                    <a href="{{url_for('about')}}" class="nav-item nav-link active" style="color:#0d8383">ABOUT</a>
+                    <a href="{{url_for('registration')}}" class="nav-item nav-link"
+                        style="color:#0d8383">REGISTRATION</a>
+                    <a href="{{url_for('login')}}" class="nav-item nav-link" style="color:#0d8383">LOGIN</a>
+                </div>
+        </nav>
+    </div>
+    <!-- Navbar & Hero End -->
+    <!-- Service Start -->
+    <div class="container-fluid service bg-light overflow-hidden py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <h4 class="text-uppercase text-primary">ABOUT</h4>
+                <h5 class="display-6 text-capitalize mb-5">A HYBRID APPROACH FOR DETECTING INTRUSION IN WIRELESS SENSOR
+                    NETWORKS OF INDUSTRY4.0 USING MACHINE LEARNING AND DEEP LEARNING ALGORITHMS</h5>
+            </div>
+            <div class="row gx-0 gy-4 align-items-center">
+                <div class="col-lg-6 col-xl-4 wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="service-item rounded p-4 mb-4">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex">
+                                    <div class="service-content text-end">
+                                        <a href="#" class="h4 d-inline-block mb-3">Real-time Intrusion Detection</a>
+                                        <p class="mb-0">Continuously monitors network traffic in wireless sensor
+                                            networks using ML and DL algorithms.
+                                            Identifies and alerts on suspicious activities instantly, enabling immediate
+                                            threat mitigation.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-item rounded p-4 mb-4">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex">
+                                    <div class="service-content text-end">
+                                        <a href="#" class="h4 d-inline-block mb-3">Predictive Threat Analysis</a>
+                                        <p class="mb-0">Analyzes historical and current data to forecast potential
+                                            intrusion attempts.
+                                            Allows organizations to proactively strengthen defenses before attacks
+                                            occur.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-item rounded p-4 mb-0">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex">
+                                    <div class="service-content text-end">
+                                        <a href="#" class="h4 d-inline-block mb-3">Automated Response Mechanisms</a>
+                                        <p class="mb-0">Automatically initiates predefined countermeasures upon
+                                            detecting an intrusion.
+                                            Reduces response time and minimizes the impact of security breaches without
+                                            human intervention.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="bg-transparent">
+                        <img src="/static/img/b2.jpg" class="img-fluid w-300" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-4 wow fadeInRight" data-wow-delay="0.2s">
+                    <div class="service-item rounded p-4 mb-4">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex">
+                                    <div class="service-content">
+                                        <a href="#" class="h4 d-inline-block mb-3">Enhanced Data Security</a>
+                                        <p class="mb-0">Ensures the integrity and confidentiality of data transmitted
+                                            across wireless sensor networks.
+                                            Utilizes machine learning models to detect anomalies indicating data
+                                            tampering or unauthorized access.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-item rounded p-4 mb-4">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex">
+                                    <div class="service-content">
+                                        <a href="#" class="h4 d-inline-block mb-3">Network Traffic Optimization</a>
+                                        <p class="mb-0">Identifies and filters out malicious traffic, optimizing overall
+                                            network performance.
+                                            Enhances efficient communication within industrial wireless sensor networks
+                                            by removing threats.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-item rounded p-4 mb-0">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex">
+                                    <div class="service-content">
+                                        <a href="#" class="h4 d-inline-block mb-3">User Behavior Analytics</a>
+                                        <p class="mb-0">Analyzes user and device behaviors within the network to detect
+                                            insider threats and unusual patterns.
+                                            Adds an additional layer of security by identifying potential risks
+                                            originating from within the organization.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/lib/wow/wow.min.js"></script>
+    <script src="/static/lib/easing/easing.min.js"></script>
+    <script src="/static/lib/waypoints/waypoints.min.js"></script>
+    <script src="/static/lib/counterup/counterup.min.js"></script>
+    <script src="/static/lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="/static/js/main.js"></script>
+</body>
+
+</html>

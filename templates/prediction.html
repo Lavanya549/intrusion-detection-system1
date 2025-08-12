@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ML project</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: floralwhite;
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+        }
+
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .prediction-container {
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            margin: 40px auto;
+            max-width: 600px;
+            transition: transform 0.3s;
+        }
+
+        .prediction-container:hover {
+            transform: scale(1.02);
+        }
+
+        .prediction-title {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #0d8383;
+            font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .result {
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            color: #ffffff;
+            padding: 15px;
+            background-color: #0d8383;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        .msgcontainer {
+            width: 100%;
+            text-transform: uppercase;
+
+        }
+
+        .result:hover {
+            transform: scale(1.05);
+        }
+
+        button {
+            background-color: #0d8383;
+            border: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #0b6969;
+            transform: translateY(-2px);
+        }
+
+        label {
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="#" class="navbar-brand p-0">
+                <h1 class="text-primary">Unauthorized Access Mitigation</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="{{url_for('viewdata')}}" class="nav-item nav-link" style="color:#0d8383">VIEWDATA</a>
+                    <a href="{{url_for('algo')}}" class="nav-item nav-link" style="color:#0d8383">ALGORITHM
+                        SELECTION</a>
+                    <a href="{{url_for('upload')}}" class="nav-item nav-link" style="color:#0d8383">UPLOAD</a>
+                    <a href="{{url_for('prediction')}}" class="nav-item nav-link active"
+                        style="color:#0d8383">PREDICTION</a>
+                    <a href="{{url_for('index')}}" class="nav-item nav-link" style="color:#0d8383">LOGOUT</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <div>
+        <div class="prediction-container">
+            <h2 class="prediction-title">Prediction of Attack Type</h2>
+            <form method="POST" action="{{ url_for('prediction') }}">
+                <div class="form-group">
+                    <label for="id">ID</label>
+                    <input type="number" class="form-control" name="id" required>
+                </div>
+                <div class="form-group">
+                    <label for="Time">Time</label>
+                    <input type="number" class="form-control" name="Time" required>
+                </div>
+                <div class="form-group">
+                    <label for="Is_CH">Is CH?</label>
+                    <input type="number" class="form-control" name="Is_CH" required>
+                </div>
+                <div class="form-group">
+                    <label for="who_CH">Who CH?</label>
+                    <input type="number" class="form-control" name="who_CH" required>
+                </div>
+                <div class="form-group">
+                    <label for="Dist_To_CH">Distance to CH</label>
+                    <input type="number" step="0.01" class="form-control" name="Dist_To_CH" required>
+                </div>
+                <div class="form-group">
+                    <label for="ADV_S">ADV S</label>
+                    <input type="number" class="form-control" name="ADV_S" required>
+                </div>
+                <div class="form-group">
+                    <label for="ADV_R">ADV R</label>
+                    <input type="number" class="form-control" name="ADV_R" required>
+                </div>
+                <div class="form-group">
+                    <label for="JOIN_S">JOIN S</label>
+                    <input type="number" class="form-control" name="JOIN_S" required>
+                </div>
+                <div class="form-group">
+                    <label for="JOIN_R">JOIN R</label>
+                    <input type="number" class="form-control" name="JOIN_R" required>
+                </div>
+                <div class="form-group">
+                    <label for="SCH_S">SCH S</label>
+                    <input type="number" class="form-control" name="SCH_S" required>
+                </div>
+                <div class="form-group">
+                    <label for="SCH_R">SCH R</label>
+                    <input type="number" class="form-control" name="SCH_R" required>
+                </div>
+                <div class="form-group">
+                    <label for="Rank">Rank</label>
+                    <input type="number" class="form-control" name="Rank" required>
+                </div>
+                <div class="form-group">
+                    <label for="DATA_S">DATA S</label>
+                    <input type="number" step="0.00000001" class="form-control" name="DATA_S" required>
+                </div>
+                <div class="form-group">
+                    <label for="DATA_R">DATA R</label>
+                    <input type="number" step="0.000000001" class="form-control" name="DATA_R" required>
+                </div>
+                <div class="form-group">
+                    <label for="Data_Sent_To_BS">Data Sent to BS</label>
+                    <input type="number" step="0.000000001" class="form-control" name="Data_Sent_To_BS" required>
+                </div>
+                <div class="form-group">
+                    <label for="dist_CH_To_BS">Distance CH to BS</label>
+                    <input type="number" step="0.00000001" class="form-control" name="dist_CH_To_BS" required>
+                </div>
+                <div class="form-group">
+                    <label for="send_code">Send Code</label>
+                    <input type="number" class="form-control" name="send_code" required>
+                </div>
+                <div class="form-group">
+                    <label for="Expaned_Energy">Expanded Energy</label>
+                    <input type="number" step="0.0000001" class="form-control" name="Expaned_Energy" required>
+                </div>
+                <div class="mb-3">
+                    <label for="model" class="form-label">Select Model:</label>
+                    <select class="form-control" id="model" name="model" required>
+                        <option value="DecisionTree">Decision Tree</option>
+                        <option value="RandomForest">Random Forest</option>
+                        <option value="MLP">MLP (Neural Network)</option>
+                        <option value="LogisticRegression">Logistic Regression</option>
+                        <option value="Stacking">Stacking Classifier</option>
+                        <option value="AdaBoost">AdaBoost</option>
+                        <option value="XGBoost">XGBoost</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Predict</button>
+            </form>
+
+            {% if attack_type %}
+            <div class="result">
+                Predicted Attack Type: <span style="text-transform: uppercase;display: block;">{{ attack_type}}</span>
+                <!-- <span style="text-transform: uppercase;">{{ msg}}</span> -->
+                <div class="msgconatainer">
+                    {{msg}}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+</body>
+
+</html>
